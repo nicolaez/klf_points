@@ -36,7 +36,8 @@ class Employee extends CI_Controller
           'birthday'      => $this->input->post('birthday'),
           'hire_date'     => $this->input->post('hire_date'),
           'points'        => $this->input->post('points'),
-          'emp_type'      => $this->input->post('emp_type')
+          'emp_type'      => $this->input->post('emp_type'),
+          'timestamp'     => date("Y-m-d")
       );
 
     $this->Employee_model->add($data);
