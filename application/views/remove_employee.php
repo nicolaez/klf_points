@@ -41,8 +41,8 @@
                         echo '</select>';
 
                         echo '<br /><br />';
-                        echo form_submit(array('id'=>'btnAdd', 'name'=>'btnAdd','class'=>'btn btn-danger'),'Remove');
-                        echo form_reset(array('id'=>'btnClr', 'name'=>'btnClr','class'=>'btn btn-primary'),'Reset');
+                        echo form_submit(array('id'=>'block', 'name'=>'block','class'=>'btn btn-danger'),'Block');
+                        echo form_submit(array('id'=>'remove', 'name'=>'remove','class'=>'btn btn-danger'),'Remove');
 
                         echo form_close();
                         ?>

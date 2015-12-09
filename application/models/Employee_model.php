@@ -228,9 +228,14 @@ class Employee_model extends CI_Model
     $this->db->query('UPDATE employees SET points='.$total.' WHERE id_emp='.$id);
   }
 
-  public function removeEmployee($id)
+  public function blockEmployee($id)
   {
     $this->db->query('UPDATE employees SET status=0 WHERE id_emp='.$id);
+  }
+
+  public function removeEmployee($id)
+  {
+    $this->db->query('DELETE FROM employees WHERE id_emp='.$id);
   }
 
   public function removePointsToUser($id, $points)
