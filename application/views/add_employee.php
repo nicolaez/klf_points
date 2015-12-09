@@ -24,7 +24,7 @@
                 <!-- /.row -->
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-5 col-md-offset-1">
                         <?php
 
                         echo form_open('Employee/add_emp');
@@ -55,22 +55,20 @@
                             'admin' => 'admin',
                             'worker' => 'worker'
                         );
-                        echo form_label('Employee type: ');
+                        echo '<br />';
+                        echo form_label('Employee type: &nbsp; &nbsp;');
                         echo form_dropdown('emp_type', $options, 'admin');
+                        echo '<br /><br />';
                         echo form_label('Avatar: ');
-                        echo '<input type="file" name="userfoto"/>';
-                        ?>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="pull-right"> <br/>
-                            <?php
-
-                            echo form_submit(array('id'=>'btnAdd', 'name'=>'btnAdd','class'=>'btn btn-primary'),'Submit');
-                            echo form_reset(array('id'=>'btnClr', 'name'=>'btnClr','class'=>'btn btn-primary'),'Reset');
+                        echo '<input type="file" name="userfoto" class="btn btn-primary"/>';
+                        echo '<br /><br />';
+                        echo form_submit(array('id'=>'btnAdd', 'name'=>'btnAdd','class'=>'btn btn-primary'),'Submit');
+                        echo form_reset(array('id'=>'btnClr', 'name'=>'btnClr','class'=>'btn btn-primary'),'Reset');
 
                         echo form_close();
                         ?>
                     </div>
+
                 </div>
                 <!-- /.row -->
 
