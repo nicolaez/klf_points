@@ -24,7 +24,7 @@
                 <!-- /.row -->
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-5 col-md-offset-1">
                         <?php
 
                         echo form_open('Employee/add_emp');
@@ -35,6 +35,9 @@
                         echo form_label('Last Name: ');
                         echo form_input(array('id'=>'lname', 'name'=>'lname', 'class'=>'form-control'),set_value('lname'));
                         echo '<div class="error_control">'.form_error('lname').'</div>';
+                        echo form_label('Position: ');
+                        echo form_input(array('id'=>'emp_position', 'name'=>'emp_position', 'class'=>'form-control'), set_value ('emp_position'));
+                        echo '<div class="error_control">'.form_error('emp_position').'</div>';
                         echo form_label('Email: ');
                         echo form_input(array('id'=>'email', 'name'=>'email', 'class'=>'form-control'), set_value('email'));
                         echo '<div class="error_control">'.form_error('email').'</div>';
@@ -55,22 +58,20 @@
                             'admin' => 'admin',
                             'worker' => 'worker'
                         );
-                        echo form_label('Employee type: ');
+                        echo '<br />';
+                        echo form_label('Employee type: &nbsp; &nbsp;');
                         echo form_dropdown('emp_type', $options, 'admin');
+                        echo '<br /><br />';
                         echo form_label('Avatar: ');
-                        echo '<input type="file" name="userfoto"/>';
-                        ?>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="pull-right"> <br/>
-                            <?php
-
-                            echo form_submit(array('id'=>'btnAdd', 'name'=>'btnAdd','class'=>'btn btn-primary'),'Submit');
-                            echo form_reset(array('id'=>'btnClr', 'name'=>'btnClr','class'=>'btn btn-primary'),'Reset');
+                        echo '<input type="file" name="userfoto" class="btn btn-primary"/>';
+                        echo '<br /><br />';
+                        echo form_submit(array('id'=>'btnAdd', 'name'=>'btnAdd','class'=>'btn btn-primary'),'Submit');
+                        echo form_reset(array('id'=>'btnClr', 'name'=>'btnClr','class'=>'btn btn-primary'),'Reset');
 
                         echo form_close();
                         ?>
                     </div>
+
                 </div>
                 <!-- /.row -->
 

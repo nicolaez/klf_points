@@ -24,7 +24,25 @@
                 <!-- /.row -->
 
                 <div class="row">
+                    <div class="col-md-5 col-md-offset-1">
+                        <?php
 
+                        echo form_open('Employee/add_emp');
+
+                        echo form_label('Add number of points: ');
+                        echo form_input(array('id'=>'points', 'name'=>'points', 'class'=>'form-control'),set_value ('points'),'autpfocus');
+                        echo '<div class="error_control">'.form_error('points').'</div>';
+                        !!
+                        echo form_label('Description: ');
+                        echo form_textarea(array('id'=>'description', 'name'=>'description', 'rows'=> 7, 'class'=>'form-control'), set_value('description'));
+                        echo '<div class="error_control">'.form_error('lname').'</div>';
+
+                        echo form_submit(array('id'=>'btnAdd', 'name'=>'btnAdd','class'=>'btn btn-primary'),'Submit');
+                        echo form_reset(array('id'=>'btnClr', 'name'=>'btnClr','class'=>'btn btn-primary'),'Reset');
+
+                        echo form_close();
+                        ?>
+                    </div>
                 </div>
                 <!-- /.row -->
 
