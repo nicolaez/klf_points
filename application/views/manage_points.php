@@ -1,5 +1,9 @@
 
-    <div id="wrapper">
+<?php
+require 'header.php';
+?>
+
+<div id="wrapper">
 
         <!-- Navigation -->
         <?php require 'nav.php'; ?>
@@ -24,7 +28,37 @@
                 <!-- /.row -->
 
                 <div class="row">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Points</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
+                        <?php
+
+                        foreach ($rows as $row){
+                            echo '
+                        <tr>
+                            <td>'.$row->id_emp.'</td>
+                            <td>'.$row->firstname.'</td>
+                            <td>'.$row->lastname.'</td>
+                            <td>'.$row->email.'</td>
+                            <td>'.$row->points.'</td>
+                            <td>
+                            <a href="'. site_url("admin/addpoints/").'">Points + </a> |
+                            <a href="'. site_url("admin/removepoints/").'">Points - </a>
+                            </td>
+                        </tr>';
+                        }; ?>
+                        </tbody>
+                    </table>
                 </div>
                 <!-- /.row -->
 
@@ -54,3 +88,7 @@
     <!-- /#wrapper -->
 
 
+
+    <?php
+    require 'footer.php';
+    ?>

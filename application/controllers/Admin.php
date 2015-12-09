@@ -87,12 +87,12 @@ class Admin extends CI_Controller {
 
   public function managepoints()
   {
+
     $data['nav_state'] = $this->getMenuState('managepoints');
     if ($this->session->userdata('logged_in'))
     {
-      $this->load->view('header');
+      $data['rows'] = $this->Employee_model->getAllEmployees();
       $this->load->view('manage_points', $data);
-      $this->load->view('footer');
     }
     else
     {
@@ -148,10 +148,8 @@ class Admin extends CI_Controller {
       //If no session, redirect to login page
       $this->load->view('login');
     }
-
-
-
   }
+
 
   public function settings()
   {
