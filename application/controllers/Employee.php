@@ -14,11 +14,12 @@ class Employee extends CI_Controller
       parent::__construct();
       $this->load->model('Employee_model');
       $this->load->helper('form');
+      $this->load->library('upload');
     }
 
   public function index()
   {
-      $this->load->view('index');
+      $this->load->view('add_employee');
   }
 
   public function add_emp()
