@@ -155,6 +155,10 @@
                   <a href="<?php echo site_url("admin/removepoints/");?>"><i class="fa fa-fw fa-dashboard"></i> Remove
                     points</a>
               </li>
+              <li class="<?php echo $nav_state['logpoints']; ?>">
+                <a href="<?php echo site_url("admin/logpoints/");?>"><i class="fa fa-fw fa-dashboard"></i> Log of
+                  points</a>
+              </li>
           </ul>
       </li>
       <li class="<?php echo $nav_state['settings']; ?>">

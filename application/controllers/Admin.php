@@ -9,6 +9,7 @@ class Admin extends CI_Controller {
   {
     parent::__construct();
     $this->load->model("Employee_model");
+    $this->load->model("Points_model");
     $this->load->model("Common_model");
    // $data['nav_state'] = $this->Common_model->getNavBarState();
   }
@@ -93,6 +94,22 @@ class Admin extends CI_Controller {
     {
       $data['rows'] = $this->Employee_model->getAllEmployees();
       $this->load->view('manage_points', $data);
+    }
+    else
+    {
+      //If no session, redirect to login page
+      $this->load->view('login');
+    }
+  }
+
+  public function logpoints()
+  {
+
+    $data['nav_state'] = $this->getMenuState('logpoints');
+    if ($this->session->userdata('logged_in'))
+    {
+      $data['rows'] = $this->Points_model->getAllPoints();
+      $this->load->view('log_points', $data);
     }
     else
     {
