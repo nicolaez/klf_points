@@ -72,10 +72,14 @@
                         echo form_input(array('id'=>'email', 'name'=>'email', 'class'=>'form-control'), set_value('email'));
                         echo '<div class="error_control">'.form_error('email').'</div>';
                         echo form_label('Birthday: ');
-                        echo form_input(array('id'=>'birthday', 'name'=>'birthday', 'class'=>'form-control'),set_value ('birthday'));
+                        echo '<input type=date name="birthday" id="birthday" class="form-control" >';
+                        //echo form_input(array('id'=>'birthday', 'name'=>'birthday', 'class'=>'form-control'),
+                        //    set_value ('birthday'));
                         echo '<div class="error_control">'.form_error('birthday').'</div>';
                         echo form_label('Hire date: ');
-                        echo form_input(array('id'=>'hire_date', 'name'=>'hire_date', 'class'=>'form-control'), set_value ('hire_date'));
+                        //echo form_input(array('id'=>'hire_date', 'name'=>'hire_date', 'class'=>'datepicker
+                       // form-control'), set_value ('hire_date'));
+                        echo '<input type=date name="hire_date" id="hire_date" class="form-control" >';
                         echo '<div class="error_control">'.form_error('hire_date').'</div>';
                         echo form_label('Points: ');
                         echo form_input(array('id'=>'points', 'name'=>'points', 'class'=>'form-control'),set_value ('points'));
@@ -102,6 +106,9 @@
 */
                         echo form_close();
                         ?>
+                        <script type="text/javascript">
+                            $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
+                        </script>
 
                     </div>
 
