@@ -15,14 +15,10 @@ class Admin extends CI_Controller {
 
   public function index()
   {
+
     if ($this->session->userdata('logged_in'))
     {
-      $session_data = $this->session->userdata('logged_in');
-      $data['firstname'] = $session_data['firstname'];
-      $this->load->view('header');
-      $this->load->view('add_employee');
-      $this->load->view('footer');
-     // $this->load->view('template', $data);
+      $this->manageemployees();
     }
     else
     {
@@ -38,10 +34,7 @@ class Admin extends CI_Controller {
     {
       $session_data = $this->session->userdata('logged_in');
       $data['firstname'] = $session_data['firstname'];
-      $this->load->view('header');
-      $this->load->view('add_employee');
-      $this->load->view('footer');
-      // $this->load->view('template', $data);
+      $this->manageemployees();
     }
     else
     {
