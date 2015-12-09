@@ -42,7 +42,8 @@ class Points extends CI_Controller {
           'id_emp' => $this->input->post('emp_id'),
           'points' => $this->input->post('points'),
           'subject' => $this->input->post('subject'),
-          'description' => $this->input->post('description')
+          'description' => $this->input->post('description'),
+          'timestamp' => time()
       );
     $this->Points_model->addLogPoints($data);
     $this->Employee_model->addPointsToUser($this->input->post('emp_id'),$this->input->post('points'));
@@ -58,7 +59,8 @@ class Points extends CI_Controller {
         'id_emp' => $this->input->post('emp_id'),
         'points' => $rempoints,
         'subject' => $this->input->post('subject'),
-        'description' => $this->input->post('description')
+        'description' => $this->input->post('description'),
+        'timestamp' => time()
     );
     $this->Points_model->addLogPoints($data);
     $this->Employee_model->removePointsToUser($this->input->post('emp_id'),$this->input->post('points'));
