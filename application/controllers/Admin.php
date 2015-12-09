@@ -4,31 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
 
-/*
-  public function __construct()
-  {
-    parent:: __construct();
-  }
-
-  public function index()
-  {
-    if (true)
-    {
-      //	$this->load->helper('url');
-      $this->load->view('header');
-      $this->load->view('add_employee');
-      $this->load->view('footer');
-
-      //$this->load->view('default');
-
-    }
-
-//    $this->load->helper(array('form'));
- //   $this->load->view('login');
-
-  }
-*/
-
 
   public function __construct()
   {
@@ -96,6 +71,94 @@ class Admin extends CI_Controller {
       //If no session, redirect to login page
       $this->load->view('login');
       //redirect('login', 'refresh');
+    }
+  }
+
+  public function removepoints()
+  {
+    if ($this->session->userdata('logged_in'))
+    {
+      $this->load->view('header');
+      $this->load->view('remove_points');
+      $this->load->view('footer');
+    }
+    else
+    {
+      //If no session, redirect to login page
+      $this->load->view('login');
+    }
+  }
+
+  public function managepoints()
+  {
+    if ($this->session->userdata('logged_in'))
+    {
+      $this->load->view('header');
+      $this->load->view('manage_points');
+      $this->load->view('footer');
+    }
+    else
+    {
+      //If no session, redirect to login page
+      $this->load->view('login');
+    }
+  }
+
+  public function addemployee()
+  {
+    if ($this->session->userdata('logged_in'))
+    {
+      $this->load->view('header');
+      $this->load->view('add_employee');
+      $this->load->view('footer');
+    }
+    else
+    {
+      //If no session, redirect to login page
+      $this->load->view('login');
+    }
+  }
+
+  public function removeemployee()
+  {
+    if ($this->session->userdata('logged_in'))
+    {
+      $this->load->view('header');
+      $this->load->view('remove_employee');
+      $this->load->view('footer');
+    }
+    else
+    {
+      //If no session, redirect to login page
+      $this->load->view('login');
+    }
+  }
+
+  public function manageemployees()
+  {
+    if ($this->session->userdata('logged_in'))
+    {
+      $this->load->view('header');
+      $this->load->view('manage_employees');
+      $this->load->view('footer');
+    }
+    else
+    {
+      //If no session, redirect to login page
+      $this->load->view('login');
+    }
+  }
+
+  public function settings()
+  {
+    if ($this->session->userdata('logged_in'))
+    {
+      $this->load->view('settings');
+    }
+    else
+    {
+      //If no session, redirect to login page
+      $this->load->view('login');
     }
   }
 }

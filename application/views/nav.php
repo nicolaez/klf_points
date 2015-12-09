@@ -131,29 +131,34 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav side-nav">
       <li class="active">
-        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Manage Employees</a>
+        <a href="<?php echo site_url("admin/manageemployees/");?>"><i class="fa fa-fw fa-dashboard"></i> Manage
+          Employees</a>
         <ul id="demo" class="">
           <li>
-            <a href="#"><i class="fa fa-fw fa-dashboard"></i>Add employee</a>
+            <a href="<?php echo site_url("admin/addemployee/");?>"><i class="fa fa-fw fa-dashboard"></i>Add employee</a>
           </li>
+
           <li>
-            <a href="#"><i class="fa fa-fw fa-dashboard"></i>Remove Employee</a>
+            <a href="<?php echo site_url("admin/removeemployee/");?>"><i class="fa fa-fw fa-dashboard"></i>Remove
+              Employee</a>
           </li>
         </ul>
       </li>
       <li>
-        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Manage points</a>
+        <a href="<?php echo site_url("admin/managepoints/");?>"><i class="fa fa-fw fa-table"></i> Manage points</a>
           <ul id="demo" class="">
               <li>
-                  <a href="#"><i class="fa fa-fw fa-dashboard"></i> Add points</a>
+                  <a href="<?php echo site_url("admin/addpoints/");?>"><i class="fa fa-fw fa-dashboard"></i> Add
+                    points</a>
               </li>
               <li>
-                  <a href="#"><i class="fa fa-fw fa-dashboard"></i> Remove points</a>
+                  <a href="<?php echo site_url("admin/removepoints/");?>"><i class="fa fa-fw fa-dashboard"></i> Remove
+                    points</a>
               </li>
           </ul>
       </li>
       <li>
-        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Settings</a>
+        <a href="<?php echo site_url("admin/settings/");?>"><i class="fa fa-fw fa-wrench"></i> Settings</a>
       </li>
     </ul>
   </div>
