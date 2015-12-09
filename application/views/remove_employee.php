@@ -24,7 +24,29 @@
                 <!-- /.row -->
 
                 <div class="row">
+                    <div class="col-md-5 col-md-offset-1">
+                        <?php
 
+                        echo form_open('Employee/removeEmployee');
+                        echo form_label('Select employee: ');
+                        echo '<select name="emp_id" id="emp_id" class = form-control>';
+
+                        $this->load->model('Employee_model');
+                        $e1 = new Employee_model();
+                        $employees = $e1->getAllEmployees();
+                        foreach($employees as $emp){
+
+                            echo '<option value="'.$emp->id_emp.'">'.$emp->firstname.' '.$emp->lastname.'</option>';
+                        }
+                        echo '</select>';
+
+                        echo '<br /><br />';
+                        echo form_submit(array('id'=>'btnAdd', 'name'=>'btnAdd','class'=>'btn btn-danger'),'Remove');
+                        echo form_reset(array('id'=>'btnClr', 'name'=>'btnClr','class'=>'btn btn-primary'),'Reset');
+
+                        echo form_close();
+                        ?>
+                    </div>
                 </div>
                 <!-- /.row -->
 
