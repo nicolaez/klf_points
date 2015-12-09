@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
 
-
+/*
   public function __construct()
   {
     parent:: __construct();
@@ -27,9 +27,9 @@ class Admin extends CI_Controller {
  //   $this->load->view('login');
 
   }
+*/
 
 
-/*
   public function __construct()
   {
     parent::__construct();
@@ -37,11 +37,14 @@ class Admin extends CI_Controller {
 
   public function index()
   {
-    if($this->session->userdata('logged_in'))
+    if ($this->session->userdata('logged_in'))
     {
       $session_data = $this->session->userdata('logged_in');
       $data['firstname'] = $session_data['firstname'];
-      $this->load->view('template', $data);
+      $this->load->view('header');
+      $this->load->view('add_employee');
+      $this->load->view('footer');
+     // $this->load->view('template', $data);
     }
     else
     {
@@ -51,11 +54,48 @@ class Admin extends CI_Controller {
     }
   }
 
+  public function adminpage()
+  {
+    if ($this->session->userdata('logged_in'))
+    {
+      $session_data = $this->session->userdata('logged_in');
+      $data['firstname'] = $session_data['firstname'];
+      $this->load->view('header');
+      $this->load->view('add_employee');
+      $this->load->view('footer');
+      // $this->load->view('template', $data);
+    }
+    else
+    {
+      //If no session, redirect to login page
+      $this->load->view('login');
+      //redirect('login', 'refresh');
+    }
+  }
+
+
   public function logout()
   {
     $this->session->unset_userdata('logged_in');
     session_destroy();
-    redirect('default', 'refresh');
+    redirect('/admin/', 'refresh');
   }
-*/
+
+
+  public function addpoints()
+  {
+    if ($this->session->userdata('logged_in'))
+    {
+      $this->load->view('header');
+      $this->load->view('add_points');
+      $this->load->view('footer');
+      // $this->load->view('template', $data);
+    }
+    else
+    {
+      //If no session, redirect to login page
+      $this->load->view('login');
+      //redirect('login', 'refresh');
+    }
+  }
 }

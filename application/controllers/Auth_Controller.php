@@ -27,6 +27,7 @@ class Auth_Controller extends CI_Controller
   {
     parent::__construct();
     $this->load->model('Employee_model','',TRUE);
+    $this->load->model('Auth','',TRUE);
   }
 
   function index()
@@ -34,8 +35,8 @@ class Auth_Controller extends CI_Controller
     //This method will have the credentials validation
     $this->load->library('form_validation');
 
-    $this->form_validation->set_rules('email', 'Email', '');
-    $this->form_validation->set_rules('password', 'Password', '');
+    $this->form_validation->set_rules('email', 'Email', 'required');
+    $this->form_validation->set_rules('password', 'Password', 'required|callback_check_database');
 
     if($this->form_validation->run() == FALSE)
     {
@@ -45,7 +46,7 @@ class Auth_Controller extends CI_Controller
     else
     {
       //Go to private area
-      redirect('default', 'refresh');
+      redirect('/admin/adminpage/', 'refresh');
     }
 
   }
@@ -56,7 +57,7 @@ class Auth_Controller extends CI_Controller
     $email = $this->input->post('email');
 
     //query the database
-    $result = $this->user->login($email, $password);
+    $result = $this->Auth->login($email, $password);
 
     if($result)
     {
@@ -64,8 +65,8 @@ class Auth_Controller extends CI_Controller
       foreach($result as $row)
       {
         $sess_array = array(
-            'id' => $row->id,
-            'firstname' => $row->username
+            'id_emp' => $row->id_emp,
+            'firstname' => $row->firstname
         );
         $this->session->set_userdata('logged_in', $sess_array);
       }
