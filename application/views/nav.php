@@ -1,3 +1,8 @@
+<?php
+
+
+?>
+
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
@@ -7,7 +12,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="index.html">SB Admin</a>
+    <a class="navbar-brand" href="index.html">KLF Media Inc</a>
   </div>
   <!-- Top Menu Items -->
   <ul class="nav navbar-right top-nav">
@@ -126,43 +131,28 @@
     <ul class="nav navbar-nav side-nav">
       <li class="active">
         <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Manage Employees</a>
-      </li>
-
-      <li class="active">
-        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Add employee</a>
-      </li>
-      <li>
-        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Remove Employee</a>
-      </li>
-      <li>
-        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Manage points</a>
-      </li>
-      <li>
-        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Add points</a>
-      </li>
-      <li>
-        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Remove points</a>
-      </li>
-      <li>
-        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-      </li>
-      <li>
-        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown
-          <i class="fa fa-fw fa-caret-down"></i></a>
-        <ul id="demo" class="collapse">
+        <ul id="demo" class="">
           <li>
-            <a href="#">Dropdown Item</a>
+            <a href="#"><i class="fa fa-fw fa-dashboard"></i>Add employee</a>
           </li>
           <li>
-            <a href="#">Dropdown Item</a>
+            <a href="#"><i class="fa fa-fw fa-dashboard"></i>Remove Employee</a>
           </li>
         </ul>
       </li>
       <li>
-        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Manage points</a>
+          <ul id="demo" class="">
+              <li>
+                  <a href="#"><i class="fa fa-fw fa-dashboard"></i> Add points</a>
+              </li>
+              <li>
+                  <a href="#"><i class="fa fa-fw fa-dashboard"></i> Remove points</a>
+              </li>
+          </ul>
       </li>
       <li>
-        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Settings</a>
       </li>
     </ul>
   </div>

@@ -21,7 +21,7 @@
   <link href="<?php echo base_url(); ?>assets/css/plugins/morris.css" rel="stylesheet">
 
   <!-- Custom Fonts -->
-  <link href="<?php echo base_url(); ?>font-awesome/assets/css/font-awesome.min.css" rel="stylesheet"
+  <link href="<?php echo base_url(); ?>assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet"
         type="text/css">
 
 

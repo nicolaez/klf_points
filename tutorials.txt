@@ -1,0 +1,10 @@
+PAGINATION
+http://www.sitepoint.com/pagination-with-codeigniter/
+https://ellislab.com/codeigniter/user-guide/libraries/pagination.html
+http://codesamplez.com/development/codeigniter-pagination-tutorial
+http://demo.codesamplez.com/codeigniter/pagination-demo/7
+
+SEND EMAILS
+http://www.kodingmadesimple.com/2015/03/how-to-send-email-in-codeigniter-smtp.html
+
+
