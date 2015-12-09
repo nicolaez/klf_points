@@ -14,11 +14,11 @@ class Points_model extends CI_Model
     $this->db->insert('log_points', $data);
   }
 
-  public function getAllPoints($limit = 30)
+  public function getAllPoints($limit = 15)
   {
     //$this->db->where('status = ', 1);
     $this->db->order_by('timestamp desc');
-    $query = $this->db->get('log_points', 0, $limit);
+    $query = $this->db->get('log_points', $limit, 1);
     return $query->result();
   }
 
