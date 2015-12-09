@@ -45,5 +45,19 @@ class Points extends CI_Controller {
       );
     $this->Points_model->addLogPoints($data);
     $this->Employee_model->addPointsToUser($this->input->post('emp_id'),$this->input->post('points'));
+    redirect('admin/manageemployees/');
+  }
+
+  public function removePoints()
+  {
+    $data = array(
+        'id_emp' => $this->input->post('emp_id'),
+        'points' => $this->input->post('points'),
+        'subject' => $this->input->post('subject'),
+        'description' => $this->input->post('description')
+    );
+    $this->Points_model->addLogPoints($data);
+    $this->Employee_model->removePointsToUser($this->input->post('emp_id'),$this->input->post('points'));
+    redirect('admin/manageemployees/');
   }
 }
