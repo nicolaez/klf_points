@@ -11,10 +11,12 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `hire_date` int(11) NOT NULL,
   `points` int(11) NOT NULL DEFAULT '0',
   `emp_type` enum('admin','worker') CHARACTER SET latin1 NOT NULL,
-  `status` tinyint(4) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '1',
   `timestamp` int(11) NOT NULL,
   PRIMARY KEY (`id_emp`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- satus 0 - blocked;  1 - active
 
 -- --------------------------------------------------------
 
