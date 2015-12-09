@@ -1,5 +1,5 @@
 
-CREATE TABLE IF NOT EXISTS `employee` (
+CREATE TABLE IF NOT EXISTS `employees` (
   `id_emp` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(100) NOT NULL,
   `lastname` varchar(100) NOT NULL,
