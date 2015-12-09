@@ -35,6 +35,9 @@
                         echo form_label('Last Name: ');
                         echo form_input(array('id'=>'lname', 'name'=>'lname', 'class'=>'form-control'),set_value('lname'));
                         echo '<div class="error_control">'.form_error('lname').'</div>';
+                        echo form_label('Position: ');
+                        echo form_input(array('id'=>'emp_position', 'name'=>'emp_position', 'class'=>'form-control'), set_value ('emp_position'));
+                        echo '<div class="error_control">'.form_error('emp_position').'</div>';
                         echo form_label('Email: ');
                         echo form_input(array('id'=>'email', 'name'=>'email', 'class'=>'form-control'), set_value('email'));
                         echo '<div class="error_control">'.form_error('email').'</div>';
