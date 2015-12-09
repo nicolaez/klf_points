@@ -26,4 +26,12 @@ class Points extends CI_Controller {
   {
     $this->load->view('welcome_message');
   }
+
+  public function addPoints()
+  {
+    /*$this->load->model('Employee_model');
+    $e1 = new Employee_model();
+    $employees = $e1->getAllEmployee(); */
+    $this->load->view('add_points');
+  }
 }
