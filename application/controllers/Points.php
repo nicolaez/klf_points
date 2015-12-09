@@ -45,6 +45,7 @@ class Points extends CI_Controller {
       );
     $this->Points_model->addLogPoints($data);
     $this->Employee_model->addPointsToUser($this->input->post('emp_id'),$this->input->post('points'));
+    $this->sendmail($data);
     redirect('admin/manageemployees/');
   }
 
@@ -60,4 +61,28 @@ class Points extends CI_Controller {
     $this->Employee_model->removePointsToUser($this->input->post('emp_id'),$this->input->post('points'));
     redirect('admin/manageemployees/');
   }
+
+
+
+  public function sendmail($data)
+  {
+    $this->load->library('email'); // load email library
+    $this->email->from($this->config->item('klf_email'), 'KLF Media Inc');
+
+    $emps = $this->Employee_model->getAllEmployees();
+    foreach ($emps as $emp) {
+      $this->email->cc($emp->email);
+      if ((int)$emp->id_emp === (int)$data['id_emp'])
+      {
+        $this->email->to($emp->email);
+      }
+    }
+
+    $this->email->subject($data['subject']);
+    $this->email->message($data['description']);
+    if (!($this->email->send())) {
+      echo "There is error in sending mail!";
+    }
+  }
+
 }
