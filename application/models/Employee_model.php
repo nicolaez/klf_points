@@ -222,17 +222,27 @@ class Employee_model extends CI_Model
     $this->db->select('points');
     $query = $this->db->get('employees');
     $tmp = $query->result();
-   // $tmp = $this->db->query('SELECT points FROM employees WHERE id_emp='.$id);
+
     $total = (int)$tmp[0]->points + (int)$points;
-   /* $this->db->where('id', $id);
-    $this->db->update('employees', 'points', $tmp);*/
-   // $query = 'UPDATE employees SET points='.$tmp.'WHERE id_emp='.$id;
+
     $this->db->query('UPDATE employees SET points='.$total.' WHERE id_emp='.$id);
   }
 
   public function removeEmployee($id)
   {
     $this->db->query('UPDATE employees SET status=0 WHERE id_emp='.$id);
+  }
+
+  public function removePointsToUser($id, $points)
+  {
+    $this->db->where('id_emp', $id);
+    $this->db->select('points');
+    $query = $this->db->get('employees');
+    $tmp = $query->result();
+
+    $total = (int)$tmp[0]->points - (int)$points;
+
+    $this->db->query('UPDATE employees SET points='.$total.' WHERE id_emp='.$id);
   }
 
 }
