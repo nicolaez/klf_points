@@ -7,6 +7,14 @@
  */
 class Points extends CI_Controller {
 
+  public function __construct()
+  {
+    parent::__construct();
+    $this->load->model('Points_model');
+    $this->load->model('Employee_model');
+    $this->load->helper('form');
+  }
+
   /**
    * Index Page for this controller.
    *
@@ -29,9 +37,13 @@ class Points extends CI_Controller {
 
   public function addPoints()
   {
-    /*$this->load->model('Employee_model');
-    $e1 = new Employee_model();
-    $employees = $e1->getAllEmployee(); */
-    $this->load->view('add_points');
+      $data = array(
+          'id_emp' => $this->input->post('emp_id'),
+          'points' => $this->input->post('points'),
+          'subject' => $this->input->post('subject'),
+          'description' => $this->input->post('description')
+      );
+    $this->Points_model->addLogPoints($data);
+    $this->Employee_model->addPointsToUser($this->input->post('emp_id'),$this->input->post('points'));
   }
 }

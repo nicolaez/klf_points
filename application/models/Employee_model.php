@@ -207,9 +207,23 @@ class Employee_model extends CI_Model
     $this->db->insert('employee', $data);
   }
 
-  public function getAllEmployee()
+  public function getAllEmployees()
   {
     $query = $this->db->get('employees');
     return $query->result();
+  }
+
+  public function addPointsToUser($id, $points)
+  {
+    $this->db->where('id_emp', $id);
+    $this->db->select('points');
+    $query = $this->db->get('employees');
+    $tmp = $query->result();
+   // $tmp = $this->db->query('SELECT points FROM employees WHERE id_emp='.$id);
+    $total =$tmp->points + $points;
+   /* $this->db->where('id', $id);
+    $this->db->update('employees', 'points', $tmp);*/
+   // $query = 'UPDATE employees SET points='.$tmp.'WHERE id_emp='.$id;
+    $this->db->query('UPDATE employees SET points='.$total.' WHERE id_emp='.$id);
   }
 }
