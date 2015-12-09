@@ -44,17 +44,13 @@ class Employee extends CI_Controller
   }
 
 
-  public function showall()
-  {
-
-
-
-  }
 
   public function removeEmployee()
   {
     $this->Employee_model->removeEmployee($this->input->post('emp_id'));
     redirect('admin/manageemployees/');
   }
+
+
 
 }
