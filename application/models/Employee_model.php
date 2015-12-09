@@ -204,12 +204,17 @@ class Employee_model extends CI_Model
   public function add($data)
   {
     $this->db->set($data);
-    $this->db->insert('employee', $data);
+    $this->db->insert('employees', $data);
   }
 
-  public function getAllEmployee()
+
+  public function getAllEmployees()
   {
     $query = $this->db->get('employees');
     return $query->result();
   }
+
+
+
+
 }

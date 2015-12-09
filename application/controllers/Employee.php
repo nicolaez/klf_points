@@ -36,4 +36,13 @@ class Employee extends CI_Controller
     $emp = new Employee_model();
     $emp->add($data);
   }
+
+
+  public function showall()
+  {
+
+
+
+  }
+
 }

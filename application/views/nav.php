@@ -130,34 +130,34 @@
   <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav side-nav">
-      <li class="active">
+      <li class="<?php echo $nav_state['manageemployees']; ?>">
         <a href="<?php echo site_url("admin/manageemployees/");?>"><i class="fa fa-fw fa-dashboard"></i> Manage
           Employees</a>
         <ul id="demo" class="">
-          <li>
+          <li class="<?php echo $nav_state['addemployee']; ?>">
             <a href="<?php echo site_url("admin/addemployee/");?>"><i class="fa fa-fw fa-dashboard"></i>Add employee</a>
           </li>
 
-          <li>
+          <li class="<?php echo $nav_state['removeemployee']; ?>">
             <a href="<?php echo site_url("admin/removeemployee/");?>"><i class="fa fa-fw fa-dashboard"></i>Remove
               Employee</a>
           </li>
         </ul>
       </li>
-      <li>
+      <li class="<?php echo $nav_state['managepoints']; ?>">
         <a href="<?php echo site_url("admin/managepoints/");?>"><i class="fa fa-fw fa-table"></i> Manage points</a>
           <ul id="demo" class="">
-              <li>
+              <li class="<?php echo $nav_state['addpoints']; ?>">
                   <a href="<?php echo site_url("admin/addpoints/");?>"><i class="fa fa-fw fa-dashboard"></i> Add
                     points</a>
               </li>
-              <li>
+              <li class="<?php echo $nav_state['removepoints']; ?>">
                   <a href="<?php echo site_url("admin/removepoints/");?>"><i class="fa fa-fw fa-dashboard"></i> Remove
                     points</a>
               </li>
           </ul>
       </li>
-      <li>
+      <li class="<?php echo $nav_state['settings']; ?>">
         <a href="<?php echo site_url("admin/settings/");?>"><i class="fa fa-fw fa-wrench"></i> Settings</a>
       </li>
     </ul>
