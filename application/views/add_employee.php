@@ -41,27 +41,21 @@
                         echo form_label('Email: ');
                         echo form_input(array('id'=>'email', 'name'=>'email', 'class'=>'form-control'), set_value('email'));
                         echo '<div class="error_control">'.form_error('email').'</div>';
-                        echo form_label('Password: ');
-                        echo form_input(array('id'=>'passwd', 'name'=>'passwd', 'class'=>'form-control'),set_value ('passwd'));
-                        echo '<div class="error_control">'.form_error('passwd').'</div>';
                         echo form_label('Birthday: ');
                         echo form_input(array('id'=>'birthday', 'name'=>'birthday', 'class'=>'form-control'),set_value ('birthday'));
                         echo '<div class="error_control">'.form_error('birthday').'</div>';
                         echo form_label('Hire date: ');
-                        echo form_input(array('id'=>'hire_date', 'name'=>'hire_date', 'class'=>'form-control'),set_value ('hire_date'));
+                        echo form_input(array('id'=>'hire_date', 'name'=>'hire_date', 'class'=>'form-control'), set_value ('hire_date'));
                         echo '<div class="error_control">'.form_error('hire_date').'</div>';
                         echo form_label('Points: ');
                         echo form_input(array('id'=>'points', 'name'=>'points', 'class'=>'form-control'),set_value ('points'));
                         echo '<div class="error_control">'.form_error('points').'</div>';
-
-                        $options = array(
-                            'admin' => 'admin',
-                            'worker' => 'worker'
-                        );
+                        echo form_label('Employee type: ');
+                        echo '<select name="emp_type" id="emp_type" class="form-control">';
+                        echo '<option value="worker">Worker</option>option>';
+                        echo '<option value="admin">Admin</option>option>';
+                        echo '</select>';
                         echo '<br />';
-                        echo form_label('Employee type: &nbsp; &nbsp;');
-                        echo form_dropdown('emp_type', $options, 'admin');
-                        echo '<br /><br />';
                         echo form_label('Avatar: ');
                         echo '<input type="file" name="userfoto" class="btn btn-primary"/>';
                         echo '<br /><br />';
@@ -70,6 +64,7 @@
 
                         echo form_close();
                         ?>
+
                     </div>
 
                 </div>

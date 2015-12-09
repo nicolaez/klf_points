@@ -24,17 +24,23 @@ class Employee extends CI_Controller
 
   public function add_emp()
   {
-    $this->load->model('Employee_model');
+
       $data = array(
-          'name'=> 'Vasea Pupkin',
-          'email'=>'a@a.com',
-          'position'=>'boss',
-          'points'=>100,
-          'type'=>'admin',
-          'passwd'=>'123456'
+          'firstname'     => $this->input->post('fname'),
+          'lastname'      => $this->input->post('lname'),
+          'emp_position'  => $this->input->post('emp_position'),
+          'email'         => $this->input->post('email'),
+          'password'      => ' ',
+          //'avatar_blob'   ,
+        //  'avatar_url'    ,
+          'birthday'      => $this->input->post('birthday'),
+          'hire_date'     => $this->input->post('hire_date'),
+          'points'        => $this->input->post('points'),
+          'emp_type'      => $this->input->post('emp_type')
       );
-    $emp = new Employee_model();
-    $emp->add($data);
+
+    $this->Employee_model->add($data);
+    redirect('admin/manageemployees/');
   }
 
 
