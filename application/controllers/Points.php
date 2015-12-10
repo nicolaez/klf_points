@@ -76,10 +76,14 @@ class Points extends CI_Controller {
 
     $emps = $this->Employee_model->getAllEmployees();
     foreach ($emps as $emp) {
-      $this->email->cc($emp->email);
+
       if ((int)$emp->id_emp === (int)$data['id_emp'])
       {
         $this->email->to($emp->email);
+      }
+      else
+      {
+        $this->email->cc($emp->email);
       }
     }
 

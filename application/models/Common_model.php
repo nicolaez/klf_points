@@ -16,6 +16,7 @@ class Common_model extends CI_Model
         'managepoints' =>'',
         'addpoints' =>'',
         'removepoints' =>'',
+        'logpoints' =>'',
         'settings' =>'');
 
     return $nav_state;
