@@ -14,6 +14,7 @@ class Employee extends CI_Controller
       parent::__construct();
       $this->load->model('Employee_model');
       $this->load->helper('form');
+      $this->load->helper('url');
       $this->load->library('upload');
       $this->load->library('form_validation');
     }
@@ -42,18 +43,28 @@ class Employee extends CI_Controller
 
     //if($this->form_validation->run()) {
 
-     /* $config['upload_path'] = base_url().'assets/img/';
-      $config['allowed_types'] = 'jpg|jpeg|png|bmp|gif';
-      //$config['max_size']             = '100';
-      $this->load->library('upload', $config);
+    $config['upload_path'] = './assets/img/';
+    $config['allowed_types'] = 'png|jpg';
+    $config['max_size']    = '1000';
 
-      if(!$this->upload->do_upload())
-      {
-        echo 'alert(ERROR)';
-      }
+    //load upload class library
+    $this->load->library('upload', $config);
+
+    if (!$this->upload->do_upload('userfile'))
+    {
+      // case - failure
+      $upload_error = array('error' => $this->upload->display_errors());
+     // $this->load->view('upload_file_view', $upload_error);
+    }
     else
-      $data = $this->upload->data();
-
+    {
+      // case - success
+      $upload_data = $this->upload->data();
+//      $data['success_msg'] = '<div class="alert alert-success text-center">Your file <strong>' .
+//        $upload_data['file_name'] . '</strong> was successfully uploaded!</div>';
+//      $this->load->view('upload_file_view', $data);
+    }
+/*
 
     $this->config =  array(
         'upload_path'     => base_url().'./',

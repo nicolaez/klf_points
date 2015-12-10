@@ -93,7 +93,7 @@
                         echo '</select>';
                         echo '<br />';
                         echo form_label('Avatar: ');
-                        echo '<input type="file" name="userfoto" id="userfoto" class="btn btn-primary"/>';
+                        echo '<input type="file" name="userfile" id="userfile" class="btn btn-primary"/>';
                         echo '<br /><br />';
                         echo form_submit(array('id'=>'btnAdd', 'name'=>'btnAdd','class'=>'btn btn-primary'),'Submit');
                         echo form_reset(array('id'=>'btnClr', 'name'=>'btnClr','class'=>'btn btn-primary'),'Reset');
