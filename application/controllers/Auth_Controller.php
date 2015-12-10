@@ -4,25 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Auth_Controller extends CI_Controller
 {
 
-  /*
-  public function __construct()
-  {
-    parent::__construct();
-    $CI = &get_instance();
-    $CI->load->library('session');
-    $CI->load->helper('url');
-    if (!$this->session->userdata('logged_in')) {
-      redirect('login');
-    }
-  }
-
-  public function login()
-  {
-
-  }
-  */
-
-
   function __construct()
   {
     parent::__construct();
@@ -48,7 +29,6 @@ class Auth_Controller extends CI_Controller
       //Go to private area
       redirect('/admin/adminpage/', 'refresh');
     }
-
   }
 
   function check_database($password)
@@ -61,7 +41,6 @@ class Auth_Controller extends CI_Controller
 
     if($result)
     {
-      $sess_array = array();
       foreach($result as $row)
       {
         $sess_array = array(
