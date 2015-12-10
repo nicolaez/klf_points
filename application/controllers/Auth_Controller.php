@@ -66,7 +66,8 @@ class Auth_Controller extends CI_Controller
       {
         $sess_array = array(
             'id_emp' => $row->id_emp,
-            'firstname' => $row->firstname
+            'firstname' => $row->firstname,
+            'lastname' => $row->lastname
         );
         $this->session->set_userdata('logged_in', $sess_array);
       }
