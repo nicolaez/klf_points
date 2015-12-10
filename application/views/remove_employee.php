@@ -30,15 +30,21 @@
                         echo form_open('Employee/removeEmployee');
                         echo form_label('Select employee: ');
                         echo '<select name="emp_id" id="emp_id" class = form-control>';
-
+                        if(isset($_GET['id_rem']))
+                            $id_rem = $_GET['id_rem'];
                         $this->load->model('Employee_model');
                         $e1 = new Employee_model();
                         $employees = $e1->getAllEmployees();
                         foreach($employees as $emp){
-
+                            if($emp->id_emp == $id_rem)
+                                echo '<option value="'.$emp->id_emp.'" selected = "selected">'.$emp->firstname.' '
+                                    .$emp->lastname
+                                    .'</option>';
                             echo '<option value="'.$emp->id_emp.'">'.$emp->firstname.' '.$emp->lastname.'</option>';
                         }
                         echo '</select>';
+
+
 
                         echo '<br /><br />';
                         echo form_submit(array('id'=>'block', 'name'=>'block','class'=>'btn btn-danger'),'Block');

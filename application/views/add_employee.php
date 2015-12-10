@@ -58,7 +58,9 @@
 
                         */
                     //    echo form_open('Employee/add_emp');
-                        echo form_open('Employee/add_emp');
+                   //     echo form_open_multipart('Employee/add_emp');
+                        echo '<form action="http://localhost/klf_points/index.php/Employee/add_emp" method="POST"
+                        enctype="multipart/form-data" >';
                         echo form_label('First Name: ');
                         echo form_input(array('id'=>'fname', 'name'=>'fname', 'class'=>'form-control'),set_value ('name'),'autpfocus');
                         echo '<div class="error_control">'.form_error('name').'</div>';
@@ -91,7 +93,7 @@
                         echo '</select>';
                         echo '<br />';
                         echo form_label('Avatar: ');
-                        echo '<input type="file" name="userfoto" class="btn btn-primary"/>';
+                        echo '<input type="file" name="userfoto" id="userfoto" class="btn btn-primary"/>';
                         echo '<br /><br />';
                         echo form_submit(array('id'=>'btnAdd', 'name'=>'btnAdd','class'=>'btn btn-primary'),'Submit');
                         echo form_reset(array('id'=>'btnClr', 'name'=>'btnClr','class'=>'btn btn-primary'),'Reset');
@@ -104,11 +106,10 @@
                         echo form_input(array('id'=>'image_path', 'name'=>'image_path', 'class'=>'form-control',
                         'style'=>'display:block;'), set_value ('image_path'));
 */
-                        echo form_close();
+                 //       echo form_close();
+                        echo '</form>';
                         ?>
-                        <script type="text/javascript">
-                            $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
-                        </script>
+
 
                     </div>
 

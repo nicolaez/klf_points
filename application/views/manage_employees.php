@@ -56,9 +56,9 @@ require 'header.php';
                             <td>'.$row->email.'</td>
                             <td>'.$row->points.'</td>
                             <td>
-                            <a href="'. site_url("admin/removeemployee/").'">Remove </a> |
-                            <a href="'. site_url("admin/addpoints/").'">Points + </a> |
-                            <a href="'. site_url("admin/removepoints/").'">Points - </a>
+                            <a href="'. site_url("admin/removeemployee/").'?id_rem='.$row->id_emp.'">Remove </a> |
+                            <a href="'. site_url("admin/addpoints/").'?id_rem='.$row->id_emp.'">Points + </a> |
+                            <a href="'. site_url("admin/removepoints/").'?id_rem='.$row->id_emp.'">Points - </a>
                             </td>
                         </tr>';
                          }; ?>

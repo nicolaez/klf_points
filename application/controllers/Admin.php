@@ -137,6 +137,9 @@ class Admin extends CI_Controller {
   public function removeemployee()
   {
     $data['nav_state'] = $this->getMenuState('removeemployee');
+    $id = $this->uri->segment(3);
+    if($id != '')
+      $data = $id;
     if ($this->session->userdata('logged_in'))
     {
       $this->load->view('header');
