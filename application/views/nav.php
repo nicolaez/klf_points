@@ -138,6 +138,10 @@
           <li class="<?php echo $nav_state['addemployee']; ?>">
             <a href="<?php echo site_url("admin/addemployee/");?>"><i class="fa fa-fw fa-dashboard"></i>Add employee</a>
           </li>
+          <li class="<?php echo $nav_state['editemployee']; ?>">
+            <a href="<?php echo site_url("admin/editemployee/");?>"><i class="fa fa-fw fa-dashboard"></i>Edit
+              employee</a>
+          </li>
 
           <li class="<?php echo $nav_state['removeemployee']; ?>">
             <a href="<?php echo site_url("admin/removeemployee/");?>"><i class="fa fa-fw fa-dashboard"></i>Remove

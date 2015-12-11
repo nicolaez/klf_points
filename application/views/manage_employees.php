@@ -36,6 +36,7 @@ require 'header.php';
                         <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Avatar</th>
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Email</th>
@@ -51,6 +52,8 @@ require 'header.php';
                         echo '
                         <tr>
                             <td>'.$row->id_emp.'</td>
+                            <td><img id="image2" src="'.$row->avatar_blob.'" alt="avatar"
+                             class="img-responsive" width="40" height="40"/></td>
                             <td>'.$row->firstname.'</td>
                             <td>'.$row->lastname.'</td>
                             <td>'.$row->email.'</td>

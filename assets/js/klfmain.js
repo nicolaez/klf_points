@@ -36,6 +36,7 @@ function readURL(input) {
         reader.onload = function (e) {
             $('#image2').attr('src', e.target.result)
             $("#avatar_url").val(e.target.result);
+            $("#avatar_blob").val(e.target.result);
         };
 
         reader.readAsDataURL(input.files[0]);

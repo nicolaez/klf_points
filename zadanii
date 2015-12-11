@@ -1,16 +1,16 @@
 nascocite de Vitalie
 ==============================================
-1. de incarcat avatar dupa metoda kijipacs
-2. de curatat bara de navigare de sus, de scos notificarile aiurite.  +++++
++++ 1. de incarcat avatar dupa metoda kijipacs
++++ 2. de curatat bara de navigare de sus, de scos notificarile aiurite.  +++++
 3. de pus parola la utilizatori. Dashboard de aratat numai daca userul e logat.
 4. de adaugat input la parola
 5. de setat pe hosting strain
 6. de setat pe mysql strain
 7. de verificat expedierea poshtei. de rescris algoritmul pentru CC, cu array implode.
 8. de facut dashboard pentru utilizatori
-9. de facut design la pagina de login
++++ 9. de facut design la pagina de login
 10. de aruncat gunoiul.
-11. din tabele linkul sa pozitioneze dropdown exact la pozitia necesara.   ++++++++
++++ 11. din tabele linkul sa pozitioneze dropdown exact la pozitia necesara.   ++++++++
 12. tabelul log_points de facut JOINurile... mlia...pentru nume admin
 13. de facut EDIT PROFILE
 

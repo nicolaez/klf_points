@@ -134,6 +134,22 @@ class Admin extends CI_Controller {
     }
   }
 
+  public function editemployee()
+  {
+    $data['nav_state'] = $this->getMenuState('editemployee');
+    if ($this->session->userdata('logged_in'))
+    {
+      $this->load->view('header');
+      $this->load->view('edit_employee', $data);
+      $this->load->view('footer');
+    }
+    else
+    {
+      //If no session, redirect to login page
+      $this->load->view('login');
+    }
+  }
+
   public function removeemployee()
   {
     $data['nav_state'] = $this->getMenuState('removeemployee');
