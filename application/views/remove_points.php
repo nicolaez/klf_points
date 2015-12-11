@@ -43,10 +43,9 @@ require 'header.php';
                         foreach($employees as $emp){
                             if($emp->id_emp == $id_rem)
                                 echo '<option value="'.$emp->id_emp.'" selected = "selected">'.$emp->firstname.' '
-                                    .$emp->lastname
-                                    .'</option>';
-
-                            echo '<option value="'.$emp->id_emp.'">'.$emp->firstname.' '.$emp->lastname.'</option>';
+                                    .$emp->lastname.'</option>';
+                            else
+                                echo '<option value="'.$emp->id_emp.'">'.$emp->firstname.' '.$emp->lastname.'</option>';
                         }
                         echo '</select>';
                         echo form_label('Remove points: ');
