@@ -39,7 +39,8 @@ require 'header.php';
                             <th>From</th>
                             <th>To</th>
                             <th>Subject</th>
-                            <th>Points</th>
+                            <th>+/- Points</th>
+                            <th>Total Pts</th>
                             <th>Date</th>
                         </tr>
                         </thead>
@@ -50,12 +51,13 @@ require 'header.php';
                         foreach ($rows as $row){
                         echo '
                         <tr>
-                            <td>'.$row->id_emp.'</td>
-                            <td>'.$row->points.'</td>
+                            <td>'.$row->id.'</td>
+                            <td>'.$row->aname.'</td>
+                            <td>'.$row->ename.'</td>
                             <td>'.$row->subject.'</td>
-                            <td>'.$row->description.'</td>
-                            <td>'.$row->points.'</td>
-                            <td> date log </td>
+                            <td>'.$row->apoints.'</td>
+                            <td>'.$row->epoints.'</td>
+                            <td>'.gmdate("Y-m-d", $row->timestamp).' </td>
                         </tr>';
                          }; ?>
                         </tbody>

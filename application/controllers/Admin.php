@@ -74,58 +74,48 @@ class Admin extends CI_Controller {
 
   public function removepoints()
   {
-    $data['nav_state'] = $this->getMenuState('removepoints');
-    if ($this->session->userdata('logged_in'))
+    if ($this->check_logged())
     {
+      $data['nav_state'] = $this->getMenuState('removepoints');
       $this->load->view('remove_points', $data);
-    }
-    else
-    {
-      //If no session, redirect to login page
-      $this->load->view('login');
     }
   }
 
   public function managepoints()
   {
-
-    $data['nav_state'] = $this->getMenuState('managepoints');
-    if ($this->session->userdata('logged_in'))
+    if ($this->check_logged())
     {
+      $data['nav_state'] = $this->getMenuState('managepoints');
       $data['rows'] = $this->Employee_model->getAllEmployees();
       $this->load->view('manage_points', $data);
-    }
-    else
-    {
-      //If no session, redirect to login page
-      $this->load->view('login');
     }
   }
 
   public function logpoints()
   {
-
-    $data['nav_state'] = $this->getMenuState('logpoints');
-    if ($this->session->userdata('logged_in'))
+    if ($this->check_logged())
     {
+      $data['nav_state'] = $this->getMenuState('logpoints');
       $data['rows'] = $this->Points_model->getAllPoints();
       $this->load->view('log_points', $data);
     }
-    else
-    {
-      //If no session, redirect to login page
-      $this->load->view('login');
-    }
   }
+
 
   public function addemployee()
   {
-    $data['nav_state'] = $this->getMenuState('addemployee');
+    if ($this->check_logged()) {
+      $data['nav_state'] = $this->getMenuState('addemployee');
+      $this->load->view('add_employee', $data);
+    }
+  }
+
+
+  public function check_logged()
+  {
     if ($this->session->userdata('logged_in'))
     {
-      $this->load->view('header');
-      $this->load->view('add_employee', $data);
-      $this->load->view('footer');
+     return true;
     }
     else
     {
