@@ -26,46 +26,21 @@ class Employee extends CI_Controller
 
   public function add_emp()
   {
-    $add_emp_rules = array(
-        array(
-            'email' => 'email',
-            'label' => 'Email',
-            'rules' => 'required|valid_email'
-        ),
-        array(
-            'points' => 'points',
-            'label' => 'Points',
-            'rules' => 'required|integer'
-        )
-    );
-
-    $this->form_validation->set_rules($add_emp_rules);
-
-    if($this->form_validation->run()) {
-
-
       $data = array(
           'firstname' => $this->input->post('fname'),
           'lastname' => $this->input->post('lname'),
           'emp_position' => $this->input->post('emp_position'),
           'email' => $this->input->post('email'),
-          'password' => ' ',
+          'password' => '1111',
           'avatar_blob'   => $this->input->post('avatar_blob'),
-        //  'avatar_url'    ,
-        //  'avatar_url' => $this->input->post('avatar_url'),
           'birthday' => $this->input->post('birthday'),
           'hire_date' => $this->input->post('hire_date'),
-          'points' => $this->input->post('points'),
           'emp_type' => $this->input->post('emp_type'),
           'timestamp' => date("Y-m-d")
       );
 
       $this->Employee_model->add($data);
       redirect('admin/manageemployees/');
-    }
-    else
-      redirect('admin/addemployee/');
-
   }
 
   public function removeEmployee()
