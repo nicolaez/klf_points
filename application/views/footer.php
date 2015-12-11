@@ -3,7 +3,9 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/jquery-ui-timepicker-addon.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/klfmain.js"></script>
+
+
 
 <!-- Morris Charts JavaScript -->
 <!-- Morris Charts JavaScript

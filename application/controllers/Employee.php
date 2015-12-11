@@ -94,6 +94,7 @@ class Employee extends CI_Controller
           'password' => ' ',
         //    'avatar_blob'   => $this->input->post('image_blob'),
         //  'avatar_url'    ,
+          'avatar_url' => $this->input->post('avatar_url'),
           'birthday' => $this->input->post('birthday'),
           'hire_date' => $this->input->post('hire_date'),
           'points' => $this->input->post('points'),

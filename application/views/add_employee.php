@@ -35,10 +35,10 @@
                 <div class="row">
                     <div class="col-md-5 col-md-offset-1">
                         <?php
-/* AVATAR
+/* AVATAR*/
                         echo '
                          <div class="col-md-5 col-md-offset-1">
-                        <img id="image" src="'.base_url().'assets/img/avatar.png" alt="somesource"
+                        <img id="image2" src="'.base_url().'assets/img/avatar.png" alt="somesource"
                              class="img-responsive" width="100"
                              height="100"/>
                         <!-- NOTE: you can use php to input the users current image in the source attribute -->
@@ -56,11 +56,12 @@
 
                         ';
 
-                        */
-                    //    echo form_open('Employee/add_emp');
+
+                        echo form_open('Employee/add_emp');
                    //     echo form_open_multipart('Employee/add_emp');
-                        echo '<form action="http://localhost/klf_points/index.php/Employee/add_emp" method="POST"
+                     /*   echo '<form action="http://localhost/klf_points/index.php/Employee/add_emp" method="POST"
                         enctype="multipart/form-data" >';
+                     */
                         echo form_label('First Name: ');
                         echo form_input(array('id'=>'fname', 'name'=>'fname', 'class'=>'form-control'),set_value ('name'),'autpfocus');
                         echo '<div class="error_control">'.form_error('name').'</div>';
@@ -95,6 +96,7 @@
                         echo form_label('Avatar: ');
                         echo '<input type="file" name="userfile" id="userfile" class="btn btn-primary"/>';
                         echo '<br /><br />';
+                        echo '<input type="hidden" id="avatar_url" name="avatar_url" value="avatar.png">';
                         echo form_submit(array('id'=>'btnAdd', 'name'=>'btnAdd','class'=>'btn btn-primary'),'Submit');
                         echo form_reset(array('id'=>'btnClr', 'name'=>'btnClr','class'=>'btn btn-primary'),'Reset');
 /*
@@ -139,40 +141,3 @@
     </div>
     <!-- /#wrapper -->
 
-<script>
-
-
-    $("#activateFile").on('click', function(){
-        $("#fileBrowser").click();
-        alert('changed');
-
-    });
-
-    //if you want a finish edit button then use this otherwise put this code in the fileBrowser change event handler below KEEP THE readURL(this) OR IT WON'T WORK!
-
-    $("#finishEdit").on('click', function(){
-        var imgData = document.getElementById('image').src;
-        //imageData is the variable you use $_POST to get the data in php
-    //    $.post('phpscriptname.php', {imageData:imgData}, function(data){
-            //recieve information back from php through the echo function(not required)
-   //     });
-    });
-
-
-    $("#fileBrowser").change(function(){
-        alert('changed');
-     //   readURL(this);
-    });
-/*
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $('#image').attr('src', e.target.result)
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    */
-</script>
