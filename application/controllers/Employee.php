@@ -45,9 +45,9 @@ class Employee extends CI_Controller
 
   public function removeEmployee()
   {
-    if($_POST['block'])
+    if($_POST['submit']==='Block')
       $this->Employee_model->blockEmployee($this->input->post('emp_id'));
-    if($_POST['remove'])
+    if($_POST['submit']==='Remove')
       $this->Employee_model->removeEmployee($this->input->post('emp_id'));
     redirect('admin/manageemployees/');
   }

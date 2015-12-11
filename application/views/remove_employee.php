@@ -50,8 +50,8 @@ require 'header.php';
 
 
                         echo '<br /><br />';
-                        echo form_submit(array('id'=>'block', 'name'=>'block','class'=>'btn btn-danger'),'Block');
-                        echo form_submit(array('id'=>'remove', 'name'=>'remove','class'=>'btn btn-danger'),'Remove');
+                        echo form_submit(array('id'=>'block', 'name'=>'submit','class'=>'btn btn-danger'),'Block');
+                        echo form_submit(array('id'=>'remove', 'name'=>'submit','class'=>'btn btn-danger'),'Remove');
 
                         echo form_close();
                         ?>

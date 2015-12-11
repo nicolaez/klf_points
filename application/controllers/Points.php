@@ -84,9 +84,7 @@ class Points extends CI_Controller {
       }
       else
       {
-
         $emails_cc[] = $emp->email;
-        //$this->email->cc($emp->email);
       }
     }
     $this->email->cc(implode(',', $emails_cc));
