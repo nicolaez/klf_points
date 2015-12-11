@@ -1,3 +1,9 @@
+	'hostname' => 'localhost',
+	'username' => 'gamecash_klf',
+	'password' => 'KLFs0urc32015',
+	'database' => 'gamecash_klfmedia',
+
+
 -- phpMyAdmin SQL Dump
 -- version 4.1.14
 -- http://www.phpmyadmin.net
