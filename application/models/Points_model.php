@@ -16,7 +16,6 @@ class Points_model extends CI_Model
 
   public function getAllPoints($limit = 30)
   {
-    //$this->db->where('status = ', 1);
     $this->db->select('id, e.points as epoints, CONCAT (e.firstname, " " ,  e.lastname) as ename,
     log_points.subject,     log_points.timestamp,
     CONCAT (a.firstname, " " ,  a.lastname) as aname,
