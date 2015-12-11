@@ -13,13 +13,11 @@ class Common_model extends CI_Model
     $nav_state = array('addemployee' =>'',
         'manageemployees' =>'',
         'removeemployee' =>'',
-        'editemployee' =>'',
         'managepoints' =>'',
         'addpoints' =>'',
         'removepoints' =>'',
         'logpoints' =>'',
         'settings' =>'');
-
     return $nav_state;
   }
 
