@@ -1,3 +1,6 @@
+<?php
+require 'header.php';
+?>
 
     <div id="wrapper">
 
@@ -151,3 +154,6 @@
     </div>
     <!-- /#wrapper -->
 
+<?php
+require 'footer.php';
+?>
