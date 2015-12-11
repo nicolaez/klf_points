@@ -43,6 +43,7 @@ class Employee extends CI_Controller
       redirect('admin/manageemployees/');
   }
 
+
   public function removeEmployee()
   {
     if($_POST['submit']==='Block')
@@ -51,7 +52,4 @@ class Employee extends CI_Controller
       $this->Employee_model->removeEmployee($this->input->post('emp_id'));
     redirect('admin/manageemployees/');
   }
-
-
-
 }

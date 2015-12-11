@@ -133,10 +133,10 @@ class Admin extends CI_Controller
   public function removeemployee()
   {
     if ($this->check_logged()) {
-    $data['nav_state'] = $this->getMenuState('removeemployee');
-    $id = $this->uri->segment(3);
-    if ($id != '')
-      $data = $id;
+      $data['nav_state'] = $this->getMenuState('removeemployee');
+      $id = $this->uri->segment(3);
+      if ($id != '')
+        $data = $id;
       $this->load->view('remove_employee', $data);
     }
   }
@@ -144,30 +144,22 @@ class Admin extends CI_Controller
 
   public function manageemployees()
   {
-
-    $data['nav_state'] = $this->getMenuState('manageemployees');
-
-    if ($this->session->userdata('logged_in')) {
+    if ($this->check_logged()) {
+      $data['nav_state'] = $this->getMenuState('manageemployees');
       $data['rows'] = $this->Employee_model->getAllEmployees();
       $this->load->view('manage_employees', $data);
-    } else {
-      //If no session, redirect to login page
-      $this->load->view('login');
     }
   }
 
 
   public function settings()
   {
-
-    $data['nav_state'] = $this->getMenuState('settings');
-    if ($this->session->userdata('logged_in')) {
+    if ($this->check_logged()) {
+      $data['nav_state'] = $this->getMenuState('settings');
       $this->load->view('settings', $data);
-    } else {
-      //If no session, redirect to login page
-      $this->load->view('login');
     }
   }
+
 
   public function getMenuState($menu)
   {
@@ -175,6 +167,7 @@ class Admin extends CI_Controller
     $nav_state[$menu] = 'active';
     return $nav_state;
   }
+
 
   public function pagination_demo($page = 1)
   {
