@@ -85,6 +85,9 @@ require 'header.php';
                         echo form_label('Email: ');
                         echo form_input(array('id'=>'email', 'name'=>'email', 'class'=>'form-control', 'value' =>
                             $emp->email), set_value('email'));
+                        echo form_label('Password: ');
+                        echo form_input(array('id'=>'password', 'name'=>'paswword', 'class'=>'form-control', 'value' =>
+                            $emp->password), set_value('password'));
                         echo '<div class="error_control">'.form_error('email').'</div>';
                         echo form_label('Birthday: ');
                         echo '<input type=date name="birthday" id="birthday" class="form-control" value="'

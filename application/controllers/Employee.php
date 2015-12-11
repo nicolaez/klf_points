@@ -31,7 +31,7 @@ class Employee extends CI_Controller
           'lastname' => $this->input->post('lname'),
           'emp_position' => $this->input->post('emp_position'),
           'email' => $this->input->post('email'),
-          'password' => '1111',
+          'password' => $this->input->post('password'),
           'avatar_blob'   => $this->input->post('avatar_blob'),
           'birthday' => $this->input->post('birthday'),
           'hire_date' => $this->input->post('hire_date'),
