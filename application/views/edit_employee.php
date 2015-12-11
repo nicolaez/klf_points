@@ -105,7 +105,7 @@ require 'header.php';
                         echo '</select>';
                         echo '<input type="hidden" id="emp_id" name="emp_id" value="'.$emp->id_emp.'">';
                         echo '<input type="hidden" id="avatar_url" name="avatar_url" value="avatar.png">';
-                        echo '<input type="hidden" id="avatar_blob" name="avatar_blob" value="avatar_blob">';
+                        echo '<input type="hidden" id="avatar_blob" name="avatar_blob" value="'.$emp->avatar_blob.'b">';
                         echo form_submit(array('id'=>'btnAdd', 'name'=>'btnAdd','class'=>'btn btn-primary'),'Submit');
                         echo form_reset(array('id'=>'btnClr', 'name'=>'btnClr','class'=>'btn btn-primary'),'Reset');
                         echo '</form>';
