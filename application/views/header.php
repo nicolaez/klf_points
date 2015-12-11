@@ -25,6 +25,11 @@
         type="text/css">
 
 
+  <!-- KLF Styles -->
+  <link href="<?php echo base_url(); ?>assets/css/general-styles.css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>assets/css/home-styles.css" rel="stylesheet">
+
+
 
 
 

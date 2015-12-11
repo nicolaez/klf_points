@@ -24,7 +24,7 @@ class Admin extends CI_Controller {
     else
     {
       //If no session, redirect to login page
-      $this->load->view('login');
+      $this->load->view('index_klf');
       //redirect('login', 'refresh');
     }
   }

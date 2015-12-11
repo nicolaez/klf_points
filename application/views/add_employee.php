@@ -41,7 +41,7 @@ require 'header.php';
 /* AVATAR*/
                         echo '
                          <div class="col-md-5 col-md-offset-1">
-                        <img id="image2" src="'.base_url().'assets/img/avatar.png" alt="somesource"
+                        <img id="image2" src="'.base_url().'assets/images/avatar.png" alt="somesource"
                              class="img-responsive" width="100"
                              height="100"/>
                         <!-- NOTE: you can use php to input the users current image in the source attribute -->

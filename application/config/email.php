@@ -17,12 +17,6 @@
 $config['protocol'] = 'smtp';
 $config['smtp_host'] = 'ssl://smtp.gmail.com'; //change this
 $config['smtp_port'] = '465';
-/*
-$config['smtp_user'] = 'vitalie.klf@gmail.com'; //change this
-$config['klf_email'] = 'vitalie.klf@gmail.com'; //change this
-$config['smtp_pass'] = '!20vitalie.klf05'; //change this
-*/
-
 $config['smtp_user'] = 'lombardi@klfmedia.com'; //change this
 $config['klf_email'] = 'lombardi@klfmedia.com'; //change this
 $config['smtp_pass'] = 'KLFmedia20161'; //change this
