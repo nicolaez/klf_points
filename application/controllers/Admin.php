@@ -126,19 +126,46 @@ class Admin extends CI_Controller {
 
   public function editemployee()
   {
-    $data['nav_state'] = $this->getMenuState('editemployee');
-    if ($this->session->userdata('logged_in'))
-    {
-      $this->load->view('header');
-      $this->load->view('edit_employee', $data);
-      $this->load->view('footer');
-    }
-    else
-    {
-      //If no session, redirect to login page
-      $this->load->view('login');
-    }
+
+    $this->editEmployeeProfile();
   }
+
+
+  public function editEmployeeProfile($id=8)
+  {
+    if ($this->check_logged()) {
+      $data['nav_state'] = $this->getMenuState('editemployee');
+      $result = $this->Employee_model->getEmployeeById($id);
+      $data['emp'] = $result[0];
+      $this->load->view('edit_employee', $data);
+    }
+
+  }
+
+  public function updateEmployeeProfile($id=8)
+  {
+    $data = array(
+        'firstname' => $this->input->post('fname'),
+        'lastname' => $this->input->post('lname'),
+        'emp_position' => $this->input->post('emp_position'),
+        'email' => $this->input->post('email'),
+        'password' => ' ',
+        'avatar_blob'   => $this->input->post('avatar_blob'),
+      //  'avatar_url'    ,
+      //  'avatar_url' => $this->input->post('avatar_url'),
+        'birthday' => $this->input->post('birthday'),
+        'hire_date' => $this->input->post('hire_date'),
+        'points' => $this->input->post('points'),
+        'emp_type' => $this->input->post('emp_type'),
+        'timestamp' => date("Y-m-d")
+    );
+
+    $this->Employee_model->updateEmployee($id, $data);
+    redirect('admin/manageemployees/');
+
+  }
+
+
 
   public function removeemployee()
   {
