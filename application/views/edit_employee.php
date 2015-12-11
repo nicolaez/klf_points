@@ -97,10 +97,6 @@ require 'header.php';
                         echo '<input type=date name="hire_date" id="hire_date" class="form-control" value="'
                             .$emp->hire_date.'" >';
                         echo '<div class="error_control">'.form_error('hire_date').'</div>';
-                        echo form_label('Points: ');
-                        echo form_input(array('id'=>'points', 'name'=>'points', 'class'=>'form-control', 'value' =>
-                            $emp->points),set_value ('points'));
-                        echo '<div class="error_control">'.form_error('points').'</div>';
                         echo form_label('Employee type: ');
                         echo '<select name="emp_type" id="emp_type" class="form-control">';
                         echo '<option value="worker">Worker</option>option>';
