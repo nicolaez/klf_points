@@ -70,10 +70,6 @@ require 'header.php';
 
 
                         echo form_open('Employee/add_emp');
-                   //     echo form_open_multipart('Employee/add_emp');
-                     /*   echo '<form action="http://localhost/klf_points/index.php/Employee/add_emp" method="POST"
-                        enctype="multipart/form-data" >';
-                     */
                         echo form_label('First Name: ');
                         echo form_input(array('id'=>'fname', 'name'=>'fname', 'class'=>'form-control',
                             'required'=>'required'),set_value
@@ -97,37 +93,17 @@ require 'header.php';
                         //    set_value ('birthday'));
                         echo '<div class="error_control">'.form_error('birthday').'</div>';
                         echo form_label('Hire date: ');
-                        //echo form_input(array('id'=>'hire_date', 'name'=>'hire_date', 'class'=>'datepicker
-                       // form-control'), set_value ('hire_date'));
                         echo '<input type=date name="hire_date" id="hire_date" class="form-control" required="required">';
                         echo '<div class="error_control">'.form_error('hire_date').'</div>';
-                        echo form_label('Points: ');
-                        echo form_input(array('id'=>'points', 'name'=>'points', 'class'=>'form-control', 'required'=>'required'),set_value
-                        ('points'));
-                        echo '<div class="error_control">'.form_error('points').'</div>';
                         echo form_label('Employee type: ');
                         echo '<select name="emp_type" id="emp_type" class="form-control">';
                         echo '<option value="worker">Worker</option>option>';
                         echo '<option value="admin">Admin</option>option>';
                         echo '</select>';
-                    //    echo '<br />';
-                        //echo form_label('Avatar: ');
-                        //echo '<input type="file" name="userfile" id="userfile" class="btn btn-primary"/>';
-                        //echo '<br /><br />';
                         echo '<input type="hidden" id="avatar_url" name="avatar_url" value="avatar.png">';
                         echo '<input type="hidden" id="avatar_blob" name="avatar_blob" value="avatar_blob">';
                         echo form_submit(array('id'=>'btnAdd', 'name'=>'btnAdd','class'=>'btn btn-primary'),'Submit');
                         echo form_reset(array('id'=>'btnClr', 'name'=>'btnClr','class'=>'btn btn-primary'),'Reset');
-/*
-                        echo '
-                        <img id="image_blob" name = "image_blob" style="display:block;" src=""
-                        alt="somesource" />
-                             ';
-
-                        echo form_input(array('id'=>'image_path', 'name'=>'image_path', 'class'=>'form-control',
-                        'style'=>'display:block;'), set_value ('image_path'));
-*/
-                 //       echo form_close();
                         echo '</form>';
                         ?>
 
