@@ -75,6 +75,7 @@ class Points extends CI_Controller {
     $this->email->from($this->config->item('klf_email'), 'KLF Media Inc');
 
     $emps = $this->Employee_model->getAllEmployees();
+    $emails_cc = array();
     foreach ($emps as $emp) {
 
       if ((int)$emp->id_emp === (int)$data['id_emp'])
@@ -83,10 +84,15 @@ class Points extends CI_Controller {
       }
       else
       {
-        $this->email->cc($emp->email);
+
+        $emails_cc[] = $emp->email;
+        //$this->email->cc($emp->email);
       }
+
+
     }
 
+    $this->email->cc(implode(',', $emails_cc));
     $this->email->subject($data['subject']);
     $this->email->message($data['description']);
     if (!($this->email->send())) {
