@@ -250,4 +250,17 @@ class Employee_model extends CI_Model
     $this->db->query('UPDATE employees SET points='.$total.' WHERE id_emp='.$id);
   }
 
+  public function getEmployeeById($id)
+  {
+    $this->db->where('id_emp', $id);
+    $query = $this->db->get('employees');
+    return $query->result();
+  }
+
+  public function updateEmployee($id, $data)
+  {
+    $this->db->where('id_emp', $id);
+    $this->db->update('employees', $data);
+  }
+
 }

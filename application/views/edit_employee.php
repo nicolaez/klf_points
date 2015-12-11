@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Add employee
+                            Edit employee profile
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
@@ -38,9 +38,8 @@
 /* AVATAR*/
                         echo '
                          <div class="col-md-5 col-md-offset-1">
-                        <img id="image2" src="'.base_url().'assets/img/avatar.png" alt="somesource"
-                             class="img-responsive" width="100"
-                             height="100"/>
+                        <img id="image2" src="'.$emp->avatar_blob.'" alt="avatar"
+                             class="img-responsive" width="40" height="40"/>
                         <!-- NOTE: you can use php to input the users current image in the source attribute -->
                         <br/>
                         <br/>
@@ -66,35 +65,48 @@
                         ';
 
 
-                        echo form_open('Employee/add_emp');
+                        echo form_open('Employee/updateEmployeeProfile');
                    //     echo form_open_multipart('Employee/add_emp');
                      /*   echo '<form action="http://localhost/klf_points/index.php/Employee/add_emp" method="POST"
                         enctype="multipart/form-data" >';
                      */
                         echo form_label('First Name: ');
-                        echo form_input(array('id'=>'fname', 'name'=>'fname', 'class'=>'form-control'),set_value ('name'),'autpfocus');
+                        echo form_input(array('id'=>'fname', 'name'=>'fname', 'class'=>'form-control', 'value' =>
+                            $emp->firstname),
+                            set_value
+                        ('name'),'autpfocus');
                         echo '<div class="error_control">'.form_error('name').'</div>';
                         echo form_label('Last Name: ');
-                        echo form_input(array('id'=>'lname', 'name'=>'lname', 'class'=>'form-control'),set_value('lname'));
+                        echo form_input(array('id'=>'lname', 'name'=>'lname', 'class'=>'form-control', 'value' =>
+                            $emp->lastname),set_value
+                        ('lname'));
                         echo '<div class="error_control">'.form_error('lname').'</div>';
                         echo form_label('Position: ');
-                        echo form_input(array('id'=>'emp_position', 'name'=>'emp_position', 'class'=>'form-control'), set_value ('emp_position'));
+                        echo form_input(array('id'=>'emp_position', 'name'=>'emp_position', 'class'=>'form-control', 'value' =>
+                                $emp->emp_position)
+                            , set_value ('emp_position'));
                         echo '<div class="error_control">'.form_error('emp_position').'</div>';
                         echo form_label('Email: ');
-                        echo form_input(array('id'=>'email', 'name'=>'email', 'class'=>'form-control'), set_value('email'));
+                        echo form_input(array('id'=>'email', 'name'=>'email', 'class'=>'form-control', 'value' =>
+                            $emp->email), set_value
+                        ('email'));
                         echo '<div class="error_control">'.form_error('email').'</div>';
                         echo form_label('Birthday: ');
-                        echo '<input type=date name="birthday" id="birthday" class="form-control" >';
+                        echo '<input type=date name="birthday" id="birthday" class="form-control" value="'
+                            .$emp->birthday.'">';
                         //echo form_input(array('id'=>'birthday', 'name'=>'birthday', 'class'=>'form-control'),
                         //    set_value ('birthday'));
                         echo '<div class="error_control">'.form_error('birthday').'</div>';
                         echo form_label('Hire date: ');
                         //echo form_input(array('id'=>'hire_date', 'name'=>'hire_date', 'class'=>'datepicker
                        // form-control'), set_value ('hire_date'));
-                        echo '<input type=date name="hire_date" id="hire_date" class="form-control" >';
+                        echo '<input type=date name="hire_date" id="hire_date" class="form-control" value="'
+                            .$emp->hire_date.'" >';
                         echo '<div class="error_control">'.form_error('hire_date').'</div>';
                         echo form_label('Points: ');
-                        echo form_input(array('id'=>'points', 'name'=>'points', 'class'=>'form-control'),set_value ('points'));
+                        echo form_input(array('id'=>'points', 'name'=>'points', 'class'=>'form-control', 'value' =>
+                            $emp->points),set_value
+                        ('points'));
                         echo '<div class="error_control">'.form_error('points').'</div>';
                         echo form_label('Employee type: ');
                         echo '<select name="emp_type" id="emp_type" class="form-control">';

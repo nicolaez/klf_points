@@ -120,6 +120,36 @@ class Employee extends CI_Controller
     redirect('admin/manageemployees/');
   }
 
+  public function editEmployeeProfile($id=33)
+  {
+    $result = $this->Employee_model->getEmployeeById($id);
+    $data['emp'] = $result[0];
+    $this->load->view('edit_employee', $data);
+  }
+
+  public function updateEmployeeProfile($id=33)
+  {
+    $data = array(
+        'firstname' => $this->input->post('fname'),
+        'lastname' => $this->input->post('lname'),
+        'emp_position' => $this->input->post('emp_position'),
+        'email' => $this->input->post('email'),
+        'password' => ' ',
+        'avatar_blob'   => $this->input->post('avatar_blob'),
+      //  'avatar_url'    ,
+      //  'avatar_url' => $this->input->post('avatar_url'),
+        'birthday' => $this->input->post('birthday'),
+        'hire_date' => $this->input->post('hire_date'),
+        'points' => $this->input->post('points'),
+        'emp_type' => $this->input->post('emp_type'),
+        'timestamp' => date("Y-m-d")
+    );
+
+    $this->Employee_model->updateEmployee($id, $data);
+    redirect('admin/manageemployees/');
+
+  }
+
 
 
 }
