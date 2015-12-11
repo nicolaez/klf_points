@@ -75,29 +75,35 @@ require 'header.php';
                         enctype="multipart/form-data" >';
                      */
                         echo form_label('First Name: ');
-                        echo form_input(array('id'=>'fname', 'name'=>'fname', 'class'=>'form-control'),set_value ('name'),'autpfocus');
+                        echo form_input(array('id'=>'fname', 'name'=>'fname', 'class'=>'form-control',
+                            'required'=>'required'),set_value
+                        ('name'),'autpfocus');
                         echo '<div class="error_control">'.form_error('name').'</div>';
                         echo form_label('Last Name: ');
-                        echo form_input(array('id'=>'lname', 'name'=>'lname', 'class'=>'form-control'),set_value('lname'));
+                        echo form_input(array('id'=>'lname', 'name'=>'lname', 'class'=>'form-control', 'required'=>'required'),set_value
+                        ('lname'));
                         echo '<div class="error_control">'.form_error('lname').'</div>';
                         echo form_label('Position: ');
-                        echo form_input(array('id'=>'emp_position', 'name'=>'emp_position', 'class'=>'form-control'), set_value ('emp_position'));
+                        echo form_input(array('id'=>'emp_position', 'name'=>'emp_position', 'class'=>'form-control', 'required'=>'required')
+                            , set_value ('emp_position'));
                         echo '<div class="error_control">'.form_error('emp_position').'</div>';
                         echo form_label('Email: ');
-                        echo form_input(array('id'=>'email', 'name'=>'email', 'class'=>'form-control'), set_value('email'));
+                        echo form_input(array('id'=>'email', 'name'=>'email', 'class'=>'form-control', 'required'=>'required'), set_value
+                        ('email'));
                         echo '<div class="error_control">'.form_error('email').'</div>';
                         echo form_label('Birthday: ');
-                        echo '<input type=date name="birthday" id="birthday" class="form-control" >';
+                        echo '<input type=date name="birthday" id="birthday" class="form-control" required="required" >';
                         //echo form_input(array('id'=>'birthday', 'name'=>'birthday', 'class'=>'form-control'),
                         //    set_value ('birthday'));
                         echo '<div class="error_control">'.form_error('birthday').'</div>';
                         echo form_label('Hire date: ');
                         //echo form_input(array('id'=>'hire_date', 'name'=>'hire_date', 'class'=>'datepicker
                        // form-control'), set_value ('hire_date'));
-                        echo '<input type=date name="hire_date" id="hire_date" class="form-control" >';
+                        echo '<input type=date name="hire_date" id="hire_date" class="form-control" required="required">';
                         echo '<div class="error_control">'.form_error('hire_date').'</div>';
                         echo form_label('Points: ');
-                        echo form_input(array('id'=>'points', 'name'=>'points', 'class'=>'form-control'),set_value ('points'));
+                        echo form_input(array('id'=>'points', 'name'=>'points', 'class'=>'form-control', 'required'=>'required'),set_value
+                        ('points'));
                         echo '<div class="error_control">'.form_error('points').'</div>';
                         echo form_label('Employee type: ');
                         echo '<select name="emp_type" id="emp_type" class="form-control">';

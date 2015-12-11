@@ -131,8 +131,9 @@ class Admin extends CI_Controller {
   }
 
 
-  public function editEmployeeProfile($id=8)
+  public function editEmployeeProfile()
   {
+    $id=$_GET['id_rem'];
     if ($this->check_logged()) {
       $data['nav_state'] = $this->getMenuState('editemployee');
       $result = $this->Employee_model->getEmployeeById($id);
@@ -142,8 +143,9 @@ class Admin extends CI_Controller {
 
   }
 
-  public function updateEmployeeProfile($id=8)
+  public function updateEmployeeProfile()
   {
+    $id=$_POST['emp_id'];
     $data = array(
         'firstname' => $this->input->post('fname'),
         'lastname' => $this->input->post('lname'),

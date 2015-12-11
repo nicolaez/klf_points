@@ -69,7 +69,7 @@ require 'header.php';
                         ';
 
 
-                        echo form_open('Employee/updateEmployeeProfile');
+                        echo form_open('Admin/updateEmployeeProfile');
                    //     echo form_open_multipart('Employee/add_emp');
                      /*   echo '<form action="http://localhost/klf_points/index.php/Employee/add_emp" method="POST"
                         enctype="multipart/form-data" >';
@@ -121,6 +121,7 @@ require 'header.php';
                         //echo form_label('Avatar: ');
                         //echo '<input type="file" name="userfile" id="userfile" class="btn btn-primary"/>';
                         //echo '<br /><br />';
+                        echo '<input type="hidden" id="emp_id" name="emp_id" value="'.$emp->id_emp.'">';
                         echo '<input type="hidden" id="avatar_url" name="avatar_url" value="avatar.png">';
                         echo '<input type="hidden" id="avatar_blob" name="avatar_blob" value="avatar_blob">';
                         echo form_submit(array('id'=>'btnAdd', 'name'=>'btnAdd','class'=>'btn btn-primary'),'Submit');
