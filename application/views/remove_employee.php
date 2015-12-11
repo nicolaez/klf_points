@@ -1,4 +1,7 @@
 
+<?php
+require 'header.php';
+?>
     <div id="wrapper">
 
         <!-- Navigation -->
@@ -82,3 +85,7 @@
     <!-- /#wrapper -->
 
 
+
+    <?php
+    require 'footer.php';
+    ?>

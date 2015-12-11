@@ -1,3 +1,6 @@
+<?php
+require 'header.php';
+?>
 
     <div id="wrapper">
 
@@ -92,3 +95,7 @@
     <!-- /#wrapper -->
 
 
+
+<?php
+require 'footer.php';
+?>
