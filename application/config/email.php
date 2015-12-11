@@ -20,7 +20,6 @@ $config['smtp_port'] = '465';
 $config['smtp_user'] = 'lombardi@klfmedia.com'; //change this
 $config['klf_email'] = 'lombardi@klfmedia.com'; //change this
 $config['smtp_pass'] = 'KLFmedia20161'; //change this
-
 $config['mailtype'] = 'html';
 $config['charset'] = 'iso-8859-1';
 $config['wordwrap'] = TRUE;
