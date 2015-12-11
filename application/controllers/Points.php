@@ -72,7 +72,7 @@ class Points extends CI_Controller {
   public function sendmail($data)
   {
     $this->load->library('email'); // load email library
-    $this->email->from($this->config->item('klf_email'), 'KLF Media Inc');
+    $this->email->from($_SESSION['logged_in']['email'], 'KLF Media Inc');
 
     $emps = $this->Employee_model->getAllEmployees();
     $emails_cc = array();
